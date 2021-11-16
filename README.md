@@ -34,7 +34,7 @@ Give the Startup Command with the command to start FastAPI on Azure App Service.
 
 ### Note on deployment via VS Code
 
-The VS code Azure plugin is using [Oryx] (https://github.com/Microsoft/Oryx) for python app deployment.
+The VS code Azure plugin is using [Oryx](https://github.com/Microsoft/Oryx) for python app deployment.
 
 Oryx is a build system which automatically compiles source code repos into runnable artifacts. It is used to build web apps for Azure App Service and other platforms.
 
