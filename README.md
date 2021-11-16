@@ -18,7 +18,7 @@ Key highlights of this sample:
 
 
 ## Deploying sample code to Azure App Service
-You can deploy your FastAPI Python app using VS Code and the Azure App Service extension. Follow instructions [Deploy your Python web app to Azure App Service on Linux]:https://docs.microsoft.com/en-us/azure/developer/python/tutorial-deploy-app-service-on-linux-05 that explains how to deploy any Python app to Azure App Service. 
+You can deploy your FastAPI Python app using VS Code and the Azure App Service extension. Follow instructions [Deploy your Python web app to Azure App Service on Linux](https://docs.microsoft.com/en-us/azure/developer/python/tutorial-deploy-app-service-on-linux-05) that explains how to deploy any Python app to Azure App Service. 
 
 1. To deploy your FastAPI in **main.py** to Azure App Service, select the "fastapi-appservice-python" as the root folder when prompted in the VS code. You can either have VS Code create new App Service plan OR you can deploy your app to an existing app service/plan.
 2. Once deployment is completed, your app will still not work as expected until you make the below change.
