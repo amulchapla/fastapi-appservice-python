@@ -1,0 +1,3 @@
+vendor/fastapi-0.68.0-py3-none-any.whl
+vendor/uvicorn-0.15.0-py3-none-any.whl
+
