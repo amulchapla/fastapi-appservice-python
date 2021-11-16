@@ -30,3 +30,11 @@ Give the Startup Command with the command to start FastAPI on Azure App Service.
 4. Restart your app service
 5. Open browser and go to `"https://<appservicename>.azurewebsites.net"` and you should get a "Hello World FastAPI" message back.
 6. You can also get to API swagger doc at `"https://<appservicename>.azurewebsites.net/docs"`
+
+
+### Note on deployment via VS Code
+
+The VS code Azure plugin is using [Oryx] (https://github.com/Microsoft/Oryx) for python app deployment.
+
+Oryx is a build system which automatically compiles source code repos into runnable artifacts. It is used to build web apps for Azure App Service and other platforms.
+
