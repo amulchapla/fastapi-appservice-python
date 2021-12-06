@@ -6,6 +6,7 @@ Key highlights of this sample:
 1. The FastAPI app is in main.py
 2. The required Python modules are in the vendor directory as .whl (wheel)
 3. Depenency requirements are captured in requirements.txt (as usual)
+4. Environment variables are used. Custom variables declared in .env file and loaded using python-dotenv lib. These variables can be changed at deployment time using app service settings.
 
 
 ## Run the code locally
@@ -37,4 +38,12 @@ Give the Startup Command with the command to start FastAPI on Azure App Service.
 The VS code Azure plugin is using [Oryx](https://github.com/Microsoft/Oryx) for python app deployment.
 
 Oryx is a build system which automatically compiles source code repos into runnable artifacts. It is used to build web apps for Azure App Service and other platforms.
+
+### Note on changing application variables (environment variables)
+
+You can specify variable values (that might change environment to environment) using the [app settings](https://docs.microsoft.com/en-us/azure/app-service/configure-language-python#access-app-settings-as-environment-variables).
+
+Below is an example of specifying custom value for variable FILESTORE_PATH which is declared in .env file within the Python project. You can either use the default value that's in the .env file or override it at deployment time by going to Configuration -> App settings as shown in the image below.
+
+<img src="images/environmentvariables_appsetting.JPG" align="center" />
 

@@ -1,3 +1,4 @@
 vendor/fastapi-0.68.0-py3-none-any.whl
 vendor/uvicorn-0.15.0-py3-none-any.whl
+vendor/python_dotenv-0.19.1-py2.py3-none-any.whl
 
