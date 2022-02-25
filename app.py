@@ -1,4 +1,5 @@
 # Run `uvicorn main:app`
+# OR Run `uvicorn app:app`
 # Open browser and go to `"http://localhost:8000"` and you should get a "Hello World FastAPI" message back.
 # You can also get to API swagger doc at `"http://localhost:8000/docs"`
 
