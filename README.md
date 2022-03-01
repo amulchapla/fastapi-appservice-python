@@ -40,9 +40,15 @@ Follow detailed instructions [here](https://docs.microsoft.com/en-us/azure/app-s
 
 2. Enable build automation for Zip Deployment (**very important**)
 When deploying a ZIP file of your Python code, you need to set a flag to enable Azure build automation. The build automation will install any necessary requirements and package the application to run on Azure.
-Build automation in Azure is enabled by setting the **SCM_DO_BUILD_DURING_DEPLOYMENT** app setting in either the Azure portal or Azure CLI.
+    Build automation in Azure is enabled by setting the **SCM_DO_BUILD_DURING_DEPLOYMENT** app setting in either the Azure portal or Azure CLI.
 
-Via CLI: az webapp config appsettings set --resource-group rgname --name appname  --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
+    Via CLI: az webapp config appsettings set --resource-group rgname --name appname  --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
+
+    **Bulk appsetting changes using [JSON file](https://docs.microsoft.com/en-us/azure/app-service/configure-common?tabs=portal)**
+    az webapp config appsettings set --resource-group <group-name> --name <app-name> --settings "@fileName.json"
+
+    Example json file with appsetting: appdeploysettings.json
+    NOTE: Bulk changes using this approach appends to existing settings. i.e. it does not delete existing properties that's already set, if you are not changing it using above commands.
 
 3. Deploy application code to Azure App Service
 Zip up code, required .whl files, .py file, app dependencies and requirements.txt. Deploy Zip file via Azure CLI.
@@ -51,7 +57,7 @@ Example: az webapp deploy --name appname  --resource-group rgname --src-path fas
 4. Customize Startup Command:
 Via CLI: az webapp config set --startup-file="gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:app" --name appname  --resource-group rgname
 
-Via Portal: Open the App Service that you have deployed your FastAPI app to. Under "Settings -> Configuration" open tab General Settings of App Service Give the Startup Command with the command to start FastAPI on Azure App Service. "gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app"
+    Via Portal: Open the App Service that you have deployed your FastAPI app to. Under "Settings -> Configuration" open tab General Settings of App Service Give the Startup Command with the command to start FastAPI on Azure App Service. "gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app"
 
 5. Restart App. App Service doesn’t pick up the startup changes automatically, so you’ll need to restart the WebApp
 Via CLI: az webapp restart --name appname  --resource-group rgname

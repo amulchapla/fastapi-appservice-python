@@ -1,0 +1,17 @@
+[
+    {
+      "name": "DATABASE_SERVER",
+      "value": "MyCosmosDB-server-dev",
+      "slotSetting": false
+    },
+    {
+      "name": "FILESTORE_PATH",
+      "value": "filepath/dev/tms",
+      "slotSetting": false
+    },
+    {
+      "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+      "value": "true",
+      "slotSetting": false
+    }   
+  ]
